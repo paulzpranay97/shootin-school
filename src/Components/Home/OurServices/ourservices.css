@@ -1,0 +1,399 @@
+.service-cards {
+  position: relative;
+  width: 1000px;
+  height: 750px;
+  border-radius: 10px;
+}
+
+.our-services-ui h2 {
+  font-family: Anton;
+  font-weight: 400;
+  font-size: 56px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+
+.service-cards .sc {
+  width: 240px;
+  height: 240px;
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  opacity: 1;
+  border-radius: 100%;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.service-cards .sc1 {
+  transform: rotate(-113deg) translate(0, -269%);
+}
+
+.service-cards .sc2 {
+  transform: rotate(-82deg) translate(0, -219%);
+}
+
+.service-cards .sc3 {
+  transform: rotate(-47deg) translate(0, -150%);
+}
+
+.service-cards .sc4 {
+  transform: rotate(10deg) translate(0, -88%);
+}
+
+.service-cards .sc5 {
+  transform: rotate(85deg) translate(0, -110%);
+}
+
+.service-cards .sc6 {
+  transform: rotate(125deg) translate(0, -180%);
+}
+
+.services-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  flex-direction: column;
+}
+
+.our-services-ui {
+  padding: 110px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.b-img {
+  position: absolute;
+  left: -34%;
+  z-index: 0;
+  bottom: -285px;
+}
+
+.offer-sec {
+  max-width: 800px;
+  width: 100%;
+  box-shadow: 0px 0px 4px 0px #00000040;
+  border-radius: 20px;
+  background: #fff;
+  padding: 40px 20px;
+  z-index: 10;
+  position: relative;
+  margin-top: -90px;
+}
+
+.offer-sec .offer-list ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.offer-sec .offer-list ul li.offer-items {
+  flex: 0 0 50%;
+  max-width: calc(50% - 30px);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.offer-sec .offer-list ul li.offer-items p {
+  background: linear-gradient(144.3deg, #d07300 5.88%, #ff930e 94.12%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 100%;
+  padding-bottom: 5px;
+}
+
+.offer-sec h2 {
+  font-family: Anton;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 100%;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.offer-btn a {
+  width: 390px;
+  height: 78px;
+  border-radius: 12px;
+  padding: 10px;
+  gap: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #c48308;
+  color: #000000;
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 100%;
+}
+
+.offer-btn {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  align-items: center;
+  bottom: -50px;
+}
+
+.sc-icon.IC {
+  transform: rotate(112deg);
+}
+
+.sc-icon.FD {
+  transform: rotate(83deg);
+}
+
+.sc-icon.SC {
+  transform: rotate(49deg);
+}
+
+.sc-icon.SP {
+  transform: rotate(-9deg);
+}
+
+.sc-icon.ASP {
+  transform: rotate(-83deg);
+}
+
+.sc-icon.FP {
+  transform: rotate(-125deg);
+}
+
+.sc-icon img {
+  width: 100%;
+}
+
+.service-card-sm,
+.img-b-sm {
+  display: none;
+}
+
+@media (max-width: 1400px) {
+  .service-cards .sc {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .service-cards .sc {
+    width: 160px;
+    height: 160px;
+  }
+  .home-mission-right {
+    padding: 20px 33px 20px 0;
+  }
+}
+
+@media (max-width: 1024px) {
+  .services-list .service-cards {
+    display: none;
+  }
+
+  .services-list {
+    background-image: unset;
+  }
+
+  .offer-btn {
+    position: unset;
+  }
+
+  .service-card-sm {
+    width: 100%;
+    padding: 15px 23px;
+  }
+
+  .service-card-sm h2 {
+    font-family: Anton;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0%;
+  }
+
+  .service-card-sm .service-card-sm-list {
+    display: flex;
+    gap: 65px 15px;
+    flex-wrap: wrap;
+    margin-top: 80px;
+  }
+
+  .service-card-sm .service-card-sm-list .service-card-sm-item {
+    flex: 0 0 33%;
+    max-width: calc(33% - 15px);
+  }
+
+  .service-card-sm,
+  .img-b-sm {
+    display: block;
+  }
+
+  .service-card-sm .service-card-sm-list .service-card-sm-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    text-align: center;
+    background: #fff;
+    box-shadow: 0px 0px 4px 0px #00000040;
+    border-radius: 8px;
+    padding: 25px 32px;
+  }
+
+  .service-card-sm
+    .service-card-sm-list
+    .service-card-sm-item
+    .service-card-sm-IMG
+    img {
+    width: 150px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  .service-card-sm
+    .service-card-sm-list
+    .service-card-sm-item
+    .service-card-sm-IMG {
+    margin-top: -70px;
+  }
+
+  .service-card-sm h2 {
+    text-align: center;
+  }
+
+  .service-card-sm {
+    background: #fff;
+    box-shadow: 0px 0px 8px 0px #00000040;
+    border-radius: 10px;
+    margin-top: 22px;
+    padding: 50px;
+    padding-top: 30px;
+  }
+
+  .service-card-sm h2 {
+    text-align: center;
+  }
+
+  .service-card-sm .service-card-sm-list .service-card-sm-item p {
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 100%;
+    text-align: center;
+    text-transform: capitalize;
+  }
+
+  .offer-sec {
+    margin-top: -185px;
+  }
+
+  .our-services-ui h2 {
+    display: none;
+}
+}
+
+@media (max-width: 991px) {
+  .service-card-sm .service-card-sm-list .service-card-sm-item {
+    flex: 0 0 50%;
+    max-width: calc(50% - 15px);
+  }
+  .offer-sec .offer-list ul li.offer-items {
+    flex: 0 0 100%;
+    max-width: calc(100% - 30px);
+  }
+}
+
+@media (max-width: 768px) {
+  .service-card-sm
+    .service-card-sm-list
+    .service-card-sm-item
+    .service-card-sm-IMG
+    img {
+    width: 89px;
+    height: 50px;
+  }
+
+  .service-card-sm .service-card-sm-list .service-card-sm-item {
+    padding: 20px 32px;
+  }
+
+  .service-card-sm
+    .service-card-sm-list
+    .service-card-sm-item
+    .service-card-sm-IMG {
+    margin-top: -45px;
+  }
+
+  .our-services-ui {
+    padding: 20px;
+  }
+
+  .service-card-sm {
+    padding: 22px;
+  }
+
+  .service-card-sm .service-card-sm-list {
+    margin-top: 60px;
+  }
+
+  .offer-sec h2 {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 100%;
+  }
+
+  .offer-sec .offer-list ul li.offer-items p {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+  }
+
+  .offer-sec .offer-list ul {
+    padding: 0px 70px;
+  }
+
+  .offer-sec {
+    margin-top: -115px;
+  }
+}
+
+@media (max-width: 600px) {
+  .offer-sec .offer-list ul {
+    padding: 0px 10px;
+  }
+
+  .offer-btn a {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    height: 50px;
+  }
+
+  .offer-sec {
+    margin-top: -95px;
+  }
+}
+
+@media (max-width: 400px) {
+  .service-card-sm .service-card-sm-list .service-card-sm-item {
+    padding: 20px 20px;
+  }
+
+  .offer-sec {
+    margin-top: -25px;
+  }
+}

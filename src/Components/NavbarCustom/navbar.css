@@ -1,0 +1,402 @@
+
+
+
+.navbar-container {
+    /* width: 100%; */
+    background-color: #1C1C1C;
+    padding: 5px 20px;
+}
+
+.navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+a.register-login-btn {
+    background: #F68E1B;
+    width: 176px;
+    padding: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    line-height: 100%;
+    text-align: center;
+    font-weight: 600;
+    color: #fff;
+    border-radius: 12px;
+    text-decoration: none;
+}
+
+.navbar-wo-login {
+    display: flex;
+    align-items: center;
+    gap: 38px;
+}
+
+.navbar-logo {
+    width: 100px;
+    margin-right:0;
+
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    gap: 30px;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-menu li a {
+    color: white;
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.nav-menu li a:hover {
+    color: #070028;
+    border-radius: 10px;
+}
+
+.navbar-icons {
+    display: flex;
+    align-items: center;
+    gap:20px;
+}
+
+.nav-icon {
+    width: 22px;
+    height: 22px;
+    fill: #fff;
+    cursor: pointer;
+}
+
+
+
+.nav-menu li a:hover {
+    color: #fff;
+}
+
+.desktop-navbar {
+    width: 100%;
+    margin: 20px 0px;
+}
+
+.desktop-navbar .p-menubar.p-component {
+    background: transparent;
+    border: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.desktop-navbar .p-menubar.p-component .p-menubar-end {
+    margin: unset;
+}
+
+.desktop-navbar .p-menubar.p-component ul.p-menubar-root-list {
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+.desktop-navbar .p-menubar.p-component ul.p-menubar-root-list {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+.desktop-navbar .p-menubar.p-component ul.p-menubar-root-list li.p-menuitem .p-menuitem-content a {
+    color: #fff !important;
+    font-size: 14px;
+    font-weight: 500;
+    background-color: transparent !important;
+    text-decoration: none;
+}
+
+.desktop-navbar .p-menubar.p-component ul.p-menubar-root-list li.p-menuitem .p-menuitem-content a:hover {
+    color: #f68e1b !important;
+}
+
+.desktop-navbar .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-content .p-menuitem-link .p-menuitem-text,
+.desktop-navbar .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-content .p-menuitem-link .p-submenu-icon {
+    color: #fff;
+}
+.desktop-navbar .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-content:hover .p-menuitem-link .p-menuitem-text,
+.desktop-navbar .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-content:hover .p-menuitem-link .p-submenu-icon {
+    color: #f68e1b !important;
+  
+
+}
+
+.p-menubar .p-menubar-root-list > .p-menuitem:not(.p-highlight):not(.p-disabled) > .p-menuitem-content:hover{
+    background-color: transparent !important;
+}
+
+
+.desktop-navbar ul.p-submenu-list {
+    background: #1C1C1C;
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.desktop-navbar ul.p-submenu-list li {
+    margin-bottom: 10px;
+}
+
+.desktop-navbar ul.p-submenu-list li:last-child {
+    margin-bottom: 0px;
+}
+
+.desktop-navbar li.p-menuitem.p-menuitem-active.p-highlight {
+    background-color: transparent !important;
+}
+
+.desktop-navbar .p-menubar .p-menuitem.p-highlight > .p-menuitem-content {
+    background-color: transparent;
+}
+
+.login-menubar.p-menubar.p-component ul.p-menubar-root-list {
+    margin: unset;
+}
+
+
+.p-menubar .p-menuitem:not(.p-highlight):not(.p-disabled) > .p-menuitem-content:hover{
+    background-color: transparent !important;
+}
+
+.desktop-navbar {
+    display: block !important;
+}
+
+.mobile-sidebar,
+.mobile-header-bar {
+    display: none !important;
+}
+
+.mobile-sidebar {
+    background: #1C1C1C;
+    padding: 10px;
+}
+
+.mobile-sidebar .p-menubar-root-list {
+    background: #1C1C1C;
+    margin-top: 10px;
+    gap: 12px;
+}
+
+.mobile-sidebar ul a,
+.mobile-sidebar .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-content .p-menuitem-link .p-menuitem-text {
+    text-decoration: none !important;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff !important;
+}
+
+.mobile-sidebar .p-menubar .p-submenu-list{
+    background: #1C1C1C;
+    padding: 10px;
+    margin-left: 10px;
+}
+
+.p-submenu-list li.p-menuitem {
+    margin-bottom: 10px;
+}
+@media (max-width: 1310px) {
+
+    .mobile-sidebar .p-menubar {
+        display: flex;
+        align-items: flex-start !important;
+    }
+    
+    .mobile-sidebar-header {
+        display: none !important;
+    }
+
+    .mobile-sidebar .p-menubar-button {
+        display: none !important;
+    }
+
+    .mobile-sidebar .p-menubar-root-list {
+        display: flex !important;
+        flex-direction: column; 
+        background: #1C1C1C;
+        margin-top: 10px;
+    }
+        .navbar-logo {
+        width: 100px;
+        height: 90px;
+    }
+
+    .nav-icon{
+        height:16px;
+        width:16px;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: #070028;
+        width: 200px;
+        border-radius: 10px;
+    }
+
+    .nav-menu.visible {
+        padding-top:10px;
+        padding-bottom:10px;
+        display: flex;
+        flex-direction:column;
+        width:50%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav-menu.visible li a{
+        font-size:14px;
+    } 
+
+    .hamburger-icon {
+        display: block;
+    }
+
+     
+    .desktop-navbar {
+        display: none !important;
+    }
+
+    .mobile-sidebar{
+        display: block !important;
+    }
+    .mobile-header-bar {
+        display: flex !important;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+}
+
+@media (max-width:1024px) {
+    .mobile-sidebar .p-menubar {
+        display: flex;
+        align-items: flex-start !important;
+    }
+    .mobile-sidebar-header {
+        display: none !important;
+    }
+
+    .mobile-sidebar .p-menubar-button {
+        display: none !important;
+    }
+
+
+    .mobile-sidebar .p-menubar-root-list {
+        display: flex !important;
+        flex-direction: column; /* Optional: for a proper vertical menu */
+    }
+
+      .nav-menu.visible {
+        padding-top:10px;
+        padding-bottom:10px;
+        display: flex;
+        flex-direction:column;
+        width:50%;
+        justify-content: center;
+      }
+
+    .desktop-navbar {
+            display: none !important;
+    }
+
+    .mobile-sidebar{
+            display: block !important;
+    }
+
+    .mobile-sidebar, .mobile-header-bar {
+        display: flex !important;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    
+}
+
+
+
+
+/* Extra Small Devices (very old/small phones, < 320px) */
+@media only screen and (max-width: 299px) {
+  /* Styles for ultra-small devices */
+
+   .mobile-sidebar {
+        width: 80% !important;
+    }
+
+  
+
+}
+
+/* Smallest phones (e.g., older Androids, tiny screens) */
+@media only screen and (min-width: 300px) and (max-width: 321px) {
+  /* Styles for 300px - 320px width */
+
+    .mobile-sidebar {
+        width: 80% !important;
+    }
+}
+
+/* Small phones (e.g., iPhone SE, small Androids) */
+@media only screen and (min-width: 322px) and (max-width: 376px) {
+  /* Styles for 321px - 375px width */
+
+    .mobile-sidebar {
+        width: 70% !important;
+    }
+}
+
+/* Medium phones (e.g., iPhone X, Pixel 4a, etc.) */
+@media only screen and (min-width: 377px) and (max-width: 426px) {
+  /* Styles for 376px - 420px width */
+    .mobile-sidebar {
+        width: 60% !important;
+    }
+}
+
+/* Large phones / small tablets (portrait tablets, foldables) */
+@media only screen and (min-width: 427px) and (max-width: 769px) {
+  /* Styles for 421px - 768px width */
+    .mobile-sidebar {
+        width: 40% !important;
+    }
+}
+
+/* Tablets / small laptops */
+@media only screen and (min-width: 770px) and (max-width: 1026px) {
+  /* Styles for 769px - 1024px width */
+
+  /* Styles for 421px - 768px width */
+    .mobile-sidebar {
+        width: 40% !important;
+    }
+}
+
+/* Desktops / large laptops */
+@media only screen and (min-width: 1027px) and (max-width: 1441px) {
+  /* Styles for 1025px - 1440px width */
+}
+
+/* Extra large desktops / HD screens */
+@media only screen and (min-width: 1442px) and (max-width: 1921px) {
+  /* Styles for 1441px - 1920px width */
+}
+
+/* Ultra-wide screens / 2K+ monitors */
+@media only screen and (min-width: 1922px) {
+  /* Styles for ultra-wide screens */
+}
