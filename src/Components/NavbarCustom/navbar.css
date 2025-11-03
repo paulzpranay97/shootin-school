@@ -69,11 +69,19 @@ a.register-login-btn {
     gap:20px;
 }
 
-.nav-icon {
-    width: 22px;
-    height: 22px;
-    fill: #fff;
+.nav-icon.hamburger-icon {
+    width: 40px;
+    height: 40px;
+    background: #F58E1E;
+    border: none;
+    border-radius: 8px;
     cursor: pointer;
+}
+
+.nav-icon.hamburger-icon i {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
 }
 
 
