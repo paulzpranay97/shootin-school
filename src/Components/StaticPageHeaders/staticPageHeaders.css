@@ -1,0 +1,29 @@
+.static-page-headers-container {
+    width: 100%;
+  background-image: url("/src/Assets/Images/StaticImages/staticheaderbg.webp"); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Custom colors (adjust to match your design) */
+.text-brown {
+  color: #7a3d00;
+}
+
+.text-orange {
+  color: #f7941d;
+}
+
+/* Contact box styling */
+.contact-box {
+  border-radius: 14px !important;
+}
+
+.button-text-us {
+    border-bottom: 4px solid #f68e1b;
+}

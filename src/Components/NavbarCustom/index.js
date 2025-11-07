@@ -29,7 +29,7 @@ const NavbarCustom = () => {
     {
       label: "Services",
       items: [
-        { label: "Instruction", template: () => <Link to="#" onClick={() => setSidebarVisible(false)}>Instruction</Link> },
+        { label: "Group Instruction", template: () => <Link to="/group-instruction" onClick={() => setSidebarVisible(false)}>Group Instruction</Link> },
         { label: "Summer Camp", template: () => <Link to="#" onClick={() => setSidebarVisible(false)}>Summer Camp</Link> },
         { label: "Team Workouts", template: () => <Link to="#" onClick={() => setSidebarVisible(false)}>Team Workouts</Link> },
         { label: "Birthday Parties", template: () => <Link to="#" onClick={() => setSidebarVisible(false)}>Birthday Parties</Link> },
@@ -55,7 +55,7 @@ const NavbarCustom = () => {
     {
       label: "Services",
       items: [
-        { label: "Instruction", template: () => <Link to="#" onClick={() => setSidebarVisible(false)}>Instruction</Link> },
+        { label: "Group Instruction", template: () => <Link to="/group-instruction" onClick={() => setSidebarVisible(false)}>Group Instruction</Link> },
         { label: "Summer Camp", template: () => <Link to="#" onClick={() => setSidebarVisible(false)}>Summer Camp</Link> },
         { label: "Team Workouts", template: () => <Link to="#" onClick={() => setSidebarVisible(false)}>Team Workouts</Link> },
         { label: "Birthday Parties", template: () => <Link to="#" onClick={() => setSidebarVisible(false)}>Birthday Parties</Link> },
@@ -95,7 +95,7 @@ const NavbarCustom = () => {
     {
       label: "Services",
       items: [
-        { label: "Instruction", template: () => <Link to="#" onClick={() => setSidebarVisible(false)}>Instruction</Link> },
+        { label: "Group Instruction", template: () => <Link to="/group-instruction" onClick={() => setSidebarVisible(false)}>Group Instruction</Link> },
         { label: "Summer Camp", template: () => <Link to="#" onClick={() => setSidebarVisible(false)}>Summer Camp</Link> },
         { label: "Team Workouts", template: () => <Link to="#" onClick={() => setSidebarVisible(false)}>Team Workouts</Link> },
         { label: "Birthday Parties", template: () => <Link to="#" onClick={() => setSidebarVisible(false)}>Birthday Parties</Link> },
@@ -121,7 +121,7 @@ const NavbarCustom = () => {
     {
       label: "Services",
       items: [
-        { label: "Instruction", template: () => <Link to="#" onClick={() => setSidebarVisible(false)}>Instruction</Link> },
+        { label: "Group Instruction", template: () => <Link to="/group-instruction" onClick={() => setSidebarVisible(false)}>Group Instruction</Link> },
         { label: "Summer Camp", template: () => <Link to="#" onClick={() => setSidebarVisible(false)}>Summer Camp</Link> },
         { label: "Team Workouts", template: () => <Link to="#" onClick={() => setSidebarVisible(false)}>Team Workouts</Link> },
         { label: "Birthday Parties", template: () => <Link to="#" onClick={() => setSidebarVisible(false)}>Birthday Parties</Link> },

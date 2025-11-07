@@ -3,6 +3,9 @@ import PrivateRoute from "./PrivateRoute";
 
 import Login from "../Pages/Authentication/Login";
 import CreateAccount from "../Pages/Authentication/CreateAccount/CreateAccount";
+import GroupInstruction from "../Pages/GroupInstruction";
+import IndividualInstruction from "../Pages/IndividualInstruction";
+import UnlimitedInstruction from "../Pages/UnlimitedInstruction";
 
 import Layout from "../Components/Layout/Layout";
 import UserDashLayout from "../Components/Layout/UserDashLyout/UserDashLayout";
@@ -24,6 +27,9 @@ const Routing = () => {
       <Route path="/create-an-account" element={<CreateAccount />} />
       <Route element={<Layout />} >
         <Route path="/" element={<Home />} />
+        <Route path="/group-instruction" element={<GroupInstruction />} />
+        <Route path="/individual-instruction" element={<IndividualInstruction />} />
+        <Route path="/unlimited-instruction" element={<UnlimitedInstruction />} />
       </Route>
       <Route element={<UserDashLayout />}>
         <Route path="/profile" element={<Profile />} />

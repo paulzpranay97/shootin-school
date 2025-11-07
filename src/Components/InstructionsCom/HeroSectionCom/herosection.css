@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@400;700&display=swap');
+
+.hero-section-com-container {
+  position: relative;
+  padding: 60px 0;
+}
+
+/* === Image Wrapper with Dot Overlays === */
+.hero-image-wrapper {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-image-wrapper::before,
+.hero-image-wrapper::after {
+  content: "";
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.8;
+  z-index: 1;
+}
+
+/* Top-left dots */
+.hero-image-wrapper::before {
+  width: 326px;
+  height: 100px;
+  background-image: url("/src/Assets/Images/StaticImages/lighdots.webp");
+  top: -20px;
+  left: -20px;
+  z-index: 1;
+}
+
+/* Bottom-right dots */
+.hero-image-wrapper::after {
+  width: 577px;
+  height: 180px;
+  background-image: url("/src/Assets/Images/StaticImages/deepdots.webp");
+  bottom: -20px;
+  right: -20px;
+  z-index: 1;
+}
+
+.hero-image-wrapper img {
+  position: relative;
+  z-index: 2;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: auto;
+}
+
+/* === Title Container === */
+.hero-title-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("/src/Assets/Images/StaticImages/title_bg.webp");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 396px;
+  height: 52px;
+  padding: 4px 25px;
+  margin-bottom: 20px;
+}
+
+.hero-title {
+  font-family: "Antonio", sans-serif;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 100%;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin: 0;
+  -webkit-text-stroke: 0.7px #000; /* width and color of stroke */
+  text-stroke: 0.7px #000;
+}
+
+/* === Description List === */
+.hero-description {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.hero-description li {
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 8px;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+.hero-description li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #333;
+  font-size: 20px;
+  line-height: 1;
+}
+
+/* === Button === */
+.btn-orange {
+  background-color: #f7941d !important;
+  color: #333 !important;
+  border: 1px solid #333 !important;
+  border-radius: 20px !important;
+  transition: 0.3s;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+}
+
+.btn-orange:hover {
+  background-color: #e67c00 !important;
+}
+
+@media (max-width: 992px) {
+  .hero-section-com-container {
+    padding: 40px 0;
+  }
+
+  .hero-title-container {
+    width: 320px;
+    height: 48px;
+    background-size: contain;
+  }
+
+  .hero-title {
+    font-size: 22px;
+  }
+
+  .hero-description li {
+    font-size: 15px;
+  }
+
+  .hero-image-wrapper::before {
+    width: 250px;
+    height: 80px;
+  }
+
+  .hero-image-wrapper::after {
+    width: 400px;
+    height: 140px;
+  }
+}
+
+/* 🟡 Tablets & Large Phones (≤ 768px) */
+@media (max-width: 768px) {
+  /* .hero-section-com-container {
+    text-align: center;
+  } */
+
+  .hero-title-container {
+    margin: 0 auto 20px;
+  }
+
+  .hero-image-wrapper {
+    margin-bottom: 30px;
+  }
+
+  .hero-description li {
+    font-size: 12px;
+    padding-left: 18px;
+  }
+
+  .hero-description li::before {
+    font-size: 18px;
+  }
+
+  .btn-orange {
+    font-size: 13px !important;
+    padding: 8px 20px !important;
+  }
+}
+
+/* 🟢 Mobile Phones (≤ 576px) */
+@media (max-width: 576px) {
+  .hero-title-container {
+    width: 100%;
+    height: 45px;
+    padding: 4px 15px;
+  }
+
+  .hero-title {
+    font-size: 18px;
+  }
+
+  .hero-description li {
+    font-size: 14px;
+    padding-left: 16px;
+  }
+
+  .hero-description li::before {
+    font-size: 16px;
+  }
+
+  .hero-image-wrapper::before {
+    width: 180px;
+    height: 60px;
+  }
+
+  .hero-image-wrapper::after {
+    width: 280px;
+    height: 100px;
+  }
+
+  .btn-orange {
+    font-size: 12px !important;
+    padding: 6px 18px !important;
+  }
+
+    .hero-title-container {
+        background-size: cover !important;
+    }
+}
+
+/* 🔵 Very Small Devices (≤ 400px) */
+@media (max-width: 375px) {
+  .hero-title-container {
+    width: 100%;
+    height: 40px;
+  }
+
+  .hero-title {
+    font-size: 16px;
+  }
+
+  .hero-description li {
+    font-size: 13px;
+  }
+
+   .hero-title-container {
+        background-size: cover !important;
+    }
+
+    .btn-orange {
+        width: 100% !important;
+    }
+}
+
+
+@media (max-width: 320px) {
+    .hero-title-container {
+        background-size: contain !important;
+    }
+}
