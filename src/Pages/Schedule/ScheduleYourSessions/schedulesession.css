@@ -1,0 +1,92 @@
+.schedule-your-sessions-page {
+    max-width: 1200px;
+    margin: auto;
+    padding: 60px 20px;
+}
+
+.schedule-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.schedule-header h2 {
+    width: 100%;
+    text-align: center;
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 32px;
+}
+
+.gi-sessions-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 35px;
+}
+
+.gi-sessions-header h4 {
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 100%;
+    color: #000000;
+}
+
+.gi-sessions-header select {
+    border-radius: 11px;
+    border: 0;
+    padding: 6px 15px;
+    background: #FFF2E5;
+}
+
+.gi-sessions .gi-sessions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-bottom: 35px;
+}
+
+.gi-sessions .gi-sessions-list .gi-session-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px;
+    background: #F0F0F0;
+    border-radius: 14px;
+}
+
+.gi-sessions .gi-sessions-list .gi-session-item .gi-session-item-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    max-width: 320px;
+    width: 100%;
+}
+
+.gi-sessions .gi-sessions-list .gi-session-item span {
+    max-width: 125px;
+    width: 100%;
+}
+
+.gi-session-proceed-btn .btn {
+    width: 100%;
+    background: #F58E1E;
+    border: 0;
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 100%;
+}
+
+.gi-session-proceed-btn .btn:hover {
+    background: #884B00;
+}
+
+.p-checkbox.p-highlight .p-checkbox-box {
+    border-color: #F58E1E;
+    background: #F58E1E;
+}
+.p-checkbox:not(.p-disabled):has(.p-checkbox-input:hover) .p-checkbox-box {
+    border-color: #F58E1E;
+}

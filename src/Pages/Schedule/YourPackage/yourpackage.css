@@ -1,0 +1,53 @@
+.your-package-page {
+    max-width: 1460px;
+    margin: auto;
+    padding: 60px 20px;
+}
+
+.your-package-page table {
+    width: 100%;
+}
+
+.your-package-page table thead tr th {
+    font-family: Inter;
+    font-weight: 600;
+    font-style: Italic;
+    font-size: 18px;
+    line-height: 100%;
+    color: #4D4D4D;
+    padding-bottom: 26px;
+}
+
+.your-package-page table tbody tr td {
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 100%;
+    color: #000000;
+    padding: 20px 0px;
+}
+
+.your-package-page table tbody tr {
+    border-top: 1px solid #8E8E8E;
+    border-bottom: 1px solid #8E8E8E;
+}
+
+.your-package-page table tbody tr td button {
+    background: #F58E1E;
+    color: #FCFCFC;
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    padding: 14px 38px;
+    border-radius: 10px;
+    border: navajowhite;
+}
+
+.your-package-page td.action-td {
+    text-align: end;
+}
+
+.your-package-page table tbody tr td button:hover {
+    background: #884B00;
+}
