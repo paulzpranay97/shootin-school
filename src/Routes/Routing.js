@@ -15,6 +15,7 @@ import Home from "../Pages/Home";
 
 
 import Profile from "../Pages/UserDashboard/Profile/Profile";
+import Detail from "../Pages/UserDashboard/Profile/Details/Detail";
 
 
 
@@ -30,6 +31,7 @@ const Routing = () => {
         <Route path="/group-instruction" element={<GroupInstruction />} />
         <Route path="/individual-instruction" element={<IndividualInstruction />} />
         <Route path="/unlimited-instruction" element={<UnlimitedInstruction />} />
+      <Route path="/profile-details" element={<Detail />}/>
       </Route>
       <Route element={<UserDashLayout />}>
         <Route path="/profile" element={<Profile />} />
