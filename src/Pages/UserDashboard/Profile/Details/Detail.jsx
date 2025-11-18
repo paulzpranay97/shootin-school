@@ -4,6 +4,9 @@ import StaticPageHeaders from "../../../../Components/StaticPageHeaders";
 import "./index.css";
 import ProfileDetail from "./Sub-Section/ProfileDetail";
 import Player from "./Sub-Section/Player";
+import Payment from "./Sub-Section/Payment";
+import Package from "./Sub-Section/Package";
+import Password from "./Sub-Section/Password";
 
 const Detail = () => {
   const navigate = useNavigate();
@@ -80,20 +83,17 @@ const Detail = () => {
           )}
           {activeTab === "billing" && (
             <div id="profile-tab-billing">
-              <h3>Payments & Billings</h3>
-              <p>View your billing and transaction history.</p>
+            <Payment />
             </div>
           )}
           {activeTab === "packages" && (
             <div id="profile-tab-packages">
-              <h3>My Packages</h3>
-              <p>Explore or upgrade your current packages.</p>
+             <Package />
             </div>
           )}
           {activeTab === "password" && (
             <div id="profile-tab-password">
-              <h3>Change Password</h3>
-              <p>Update your account password securely.</p>
+            <Password />
             </div>
           )}
         </div>

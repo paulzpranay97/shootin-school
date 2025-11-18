@@ -4,6 +4,8 @@ import BASE_API_URL from "./Config";
 const axiosInstance = axios.create({
   baseURL: BASE_API_URL,
 });
+      axiosInstance.defaults.headers.common["X-Company-ID"] = 2;
+      axiosInstance.defaults.headers.common["X-Login-Role"] = "PARENT";
 
 // Request interceptor
 axiosInstance.interceptors.request.use(
