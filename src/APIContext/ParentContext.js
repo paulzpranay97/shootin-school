@@ -184,7 +184,10 @@ export const ParentProvider = ({ children, user }) => {
       setLoading(false);
     }
   };
+
   const forgotPassword = async (data) => {
+    localStorage.clear();
+
   try {
     setLoading(true);
 
@@ -213,6 +216,79 @@ export const ParentProvider = ({ children, user }) => {
   }
 };
 
+const VerifyOTP = async (data) => {
+  try {
+    setLoading(true);
+    
+
+    const response = await axiosInstance.post(
+      "/customer/forgot-password/verify-otp/",
+      data
+    );
+
+    const message = response.data?.message || "OTP verified successfully.";
+    const token = response.data?.token || null;
+    if (token) {
+      localStorage.setItem("resetToken", token);
+    }
+
+    Swal.fire({
+      icon: "success",
+      title: "OTP verified.",
+      text: message,
+    });
+
+    return { success: true, data: response.data };
+  } catch (err) {
+    Swal.fire({
+      icon: "error",
+      title: "Failed",
+      text: err.response?.data?.detail || "Failed to verify OTP.",
+    });
+
+    return { success: false };
+  } finally {
+    setLoading(false);
+  }
+};
+
+const resetPassword = async (data) => {
+  try {
+    setLoading(true);
+    const token = localStorage.getItem("resetToken");
+    
+
+    const response = await axiosInstance.post(
+      "/customer/forgot-password/reset/",
+      data,
+      { headers: { Authorization: `Bearer ${token}` } }
+    );
+
+    const message = response.data?.message || "Password reset successfully.";
+    localStorage.removeItem("resetToken");
+    localStorage.removeItem("resetEmail");
+
+
+    Swal.fire({
+      icon: "success",
+      title: "Password Reset",
+      text: message,
+    });
+
+    return { success: true, data: response.data };
+  } catch (err) {
+    Swal.fire({
+      icon: "error",
+      title: "Failed",
+      text: err.response?.data?.detail || "Failed to reset password.",
+    });
+
+    return { success: false };
+  } finally {
+    setLoading(false);
+  }
+};
+
 
   // useEffect(() => {
   //   const token = localStorage.getItem("accessToken");
@@ -232,7 +308,9 @@ export const ParentProvider = ({ children, user }) => {
         fetchCurrentParent,
         updateParentProfile,
         forgotPassword,
-        addParent
+        addParent,
+        VerifyOTP,
+        resetPassword
       }}
     >
       {loading && (

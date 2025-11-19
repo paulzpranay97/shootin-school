@@ -17,6 +17,8 @@ import Detail from "../Pages/UserDashboard/Profile/Details/Detail";
 import LoginPage from "../Pages/Authentication/login";
 import Register from "../Pages/Authentication/register/Register";
 import Forget from "../Pages/Authentication/Forget/Forget";
+import OtpVerify from "../Pages/Authentication/OtpVerify/OtpVerify";
+import ResetPassword from "../Pages/Authentication/ResetPassword/ResetPassword";
 
 
 
@@ -28,6 +30,8 @@ const Routing = () => {
       <Route path="/login" element={<LoginPage />} />
       <Route path="/create-an-account" element={<Register />} />
       <Route path="/forgot-password" element={<Forget />}/>
+      <Route path="/otp-verify" element={<OtpVerify />}/>
+      <Route path="/reset-password" element={<ResetPassword />}/>
       <Route element={<Layout />} >
         <Route path="/" element={<Home />} />
         <Route path="/group-instruction" element={<GroupInstruction />} />

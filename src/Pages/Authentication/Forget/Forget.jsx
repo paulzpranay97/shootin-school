@@ -10,11 +10,12 @@ export default function Forget() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
+        
         const result = await forgotPassword({ email });
-
+        
         if (result.success) {
-            navigate("/login"); 
+            localStorage.setItem("resetEmail", email);
+            navigate("/otp-verify"); 
         }
     };
 
