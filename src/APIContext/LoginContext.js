@@ -17,7 +17,10 @@ export const LoginProvider = ({ children }) => {
     setLoading(true);
     setError(null);
     try {
-      const { data } = await axiosInstance.post("/customer/login/", { username_or_email, password });
+      const { data } = await axiosInstance.post("/customer/login/", { username_or_email, password }
+
+      );
+
 
       let loggedInUser = data.payload.user;
       if (loggedInUser?.user) {
@@ -36,7 +39,7 @@ export const LoginProvider = ({ children }) => {
       });
       return { success: true };
 
-      
+
 
     } catch (err) {
       const message = err.response?.data?.detail || "Login failed";
@@ -92,7 +95,7 @@ export const LoginProvider = ({ children }) => {
         text: "You have been logged out successfully.",
       });
       navigate("/login", { replace: true });
- 
+
     } catch (err) {
       Swal.fire({
         icon: "error",
@@ -120,7 +123,7 @@ export const LoginProvider = ({ children }) => {
   return (
     <LoginContext.Provider value={{ user, login, logout, loading, error, changePasswordParentProfile }}>
       {loading && (
-       <Loader/>
+        <Loader />
       )}
       {children}
     </LoginContext.Provider>

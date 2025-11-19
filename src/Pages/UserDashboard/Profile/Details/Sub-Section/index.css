@@ -1,6 +1,75 @@
+/* table  */
+
+.table-header {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  font-weight: 600;
+  font-size: 14px;
+  color: #555;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+  font-style: italic;
+}
+/* --- Make table rows readable on mobile --- */
+
+/* Wrap rows/cards */
+.table-row,
+.table-header {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Mobile card-style rows */
+@media (max-width: 768px) {
+  .package-table {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .table-header {
+    display: none; /* hide header row */
+  }
+
+  .table-row {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #fafafa;
+    margin-bottom: 12px;
+    min-width: 100%; /* avoid collapse */
+  }
+
+  .table-row span {
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  /* Add a bold label before each value */
+  .table-row span::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #333;
+  }
+
+  .no-package {
+    text-align: left;
+    padding: 12px;
+  }
+}
+
+
+
 .profile-detail-container {
   width: 100%;
-  padding: 20px 30px;
+  padding: 20px 20px; 
 }
 
 .profile-title {
@@ -9,15 +78,18 @@
   margin-bottom: 15px;
   color: #1e1e1e;
 }
-
+.profile-content-area{
+  padding: 5px !important;
+}
 .profile-card {
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 10px;
-  padding: 25px;
+  padding: 22px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
+/* Header */
 .profile-card-header {
   display: flex;
   justify-content: space-between;
@@ -48,6 +120,7 @@
   background-color: #efefef;
 }
 
+
 .profile-row {
   display: flex;
   justify-content: space-between;
@@ -74,6 +147,65 @@
   font-weight: 600;
   color: #000;
 }
+
+
+@media (max-width: 768px) {
+  .profile-detail-container {
+    padding: 15px;
+  }
+
+  .profile-card {
+    padding: 18px;
+  }
+
+  .profile-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .profile-row {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .profile-field {
+    width: 100%; /* fields full width on mobile */
+  }
+
+  .value {
+    font-size: 18px; /* slightly smaller so it doesn't overflow */
+  }
+}
+
+@media (max-width: 480px) {
+  
+  .profile-detail-container {
+    padding: 12px;
+  }
+
+  .profile-card {
+    padding: 16px;
+  }
+
+  .profile-title {
+    font-size: 18px;
+  }
+
+  .profile-card-header h3 {
+    font-size: 15px;
+  }
+
+  .edit-btn {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+
+  .value {
+    font-size: 17px;
+  }
+}
+
 
 /* --- Player Section --- */
 
@@ -237,21 +369,9 @@
   border-radius: 10px;
 }
 
-.package-table {
-  margin-top: 3rem;
-}
 
-.table-header {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  font-weight: 600;
-  font-size: 14px;
-  color: #555;
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 8px;
-  margin-bottom: 8px;
-  font-style: italic;
-}
+
+
 
 .no-package {
   text-align: center;
@@ -277,10 +397,6 @@
     flex-direction: column;
   }
 
-  .table-header {
-    grid-template-columns: repeat(2, 1fr);
-    row-gap: 6px;
-  }
 
   .add-player-btn {
     width: 100%;
@@ -323,10 +439,7 @@
     font-size: 15px;
   }
 
-  .table-header {
-    grid-template-columns: repeat(2, 1fr);
-    font-size: 12px;
-  }
+
 }
 
 /* --- 320px and below --- */
@@ -373,17 +486,78 @@
     height: 140px;
   }
 
-  .table-header {
-    grid-template-columns: 1fr;
-    font-size: 11px;
-    text-align: center;
-  }
+  
 
   .section-title {
+    
     font-size: 14px;
   }
 
   .no-package {
     font-size: 12px;
+  }
+}
+
+
+/* password page  */
+
+.password-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  width: 100%;
+  max-width: 350px;
+}
+
+/* Group wrapper */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Label */
+.form-group label {
+  font-size: 14px;
+  font-weight: 600;
+  color: black;
+}
+
+/* Input */
+.form-group input {
+  width: 100%;
+  padding: 20px !important;
+  border: 1px solid #D9D9D9;
+  border-radius: 10px;
+  outline: none;
+  height:40px;
+  font-size: 14px;
+}
+
+.form-group input:focus {
+  border-color: #ffa133;
+}
+
+.update-btn {
+  width: 100%;
+  background: #F58E1E;
+  color: white;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .password-form {
+    margin-top: 30px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .password-form {
+    max-width: 350px;  
   }
 }
