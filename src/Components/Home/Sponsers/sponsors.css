@@ -1,0 +1,25 @@
+.sponsor-section {
+  padding: 60px 0;
+  text-align: center;
+}
+
+.sponsor-title {
+  font-size: 44px;
+  color: #8E4B00;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.sponsor-item img {
+  width: 120px;
+  height: auto;
+  object-fit: contain;
+  transition: 0.3s ease;
+}
+
+.sponsor-item img:hover {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}

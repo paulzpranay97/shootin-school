@@ -1,0 +1,99 @@
+.instructors-section {
+  text-align: center;
+  padding: 60px 0;
+  background: url(../../../Assets/Images/home/instructors.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.instructors-title {
+  margin-bottom: 50px;
+}
+
+/* Grid for Cards */
+.instructors-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
+  padding: 0 50px;
+}
+
+/* Each Card */
+.instructor-card {
+  border-radius: 25px;
+  overflow: hidden;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.instructor-card img {
+  width: 100%;
+  border-radius: 25px 25px 0 0;
+}
+
+/* Name + Role */
+.inst-name {
+    margin-top: 15px;
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+    padding: 10px;
+     font-family: "Antonio", sans-serif;
+}
+
+.inst-role {
+    font-size: 12px;
+    margin-top: 5px;
+    color: #fff;
+    font-style: italic;
+}
+
+/* Button */
+.inst-view-btn {
+  margin-top: 40px;
+  background: #F68E1B;
+  border: none;
+  padding: 16px 140px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #3C1F00;
+  transition: 0.3s ease;
+}
+
+.inst-view-btn:hover {
+  background: #e68821;
+}
+.instructor-name {
+    position: absolute;
+    z-index: 99;
+    bottom: 40px;
+    width: 100%;
+    left: 0;
+}
+
+@media (max-width:900px){
+    .instructors-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 35px;
+        padding: 0;
+    }
+    .instructor-card img {
+    width: 100%;
+    border-radius: 20px;
+}
+.inst-view-btn{
+    padding: 16px 90px;
+}
+}
+
+@media (max-width: 900px) {
+    .instructors-grid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 35px;
+        padding: 0;
+    }
+}

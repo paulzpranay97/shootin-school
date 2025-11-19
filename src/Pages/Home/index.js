@@ -1,20 +1,22 @@
 import React, { useState, useEffect } from "react";
-import home_background1 from '../../Assets/Images/home_background1.jpg';
-import home_background2 from '../../Assets/Images/home_background2.jpg';
-import home_background3 from '../../Assets/Images/home_background3.jpg';
+import home_background1 from '../../Assets/Images/home/banner.png';
 import "./home.css";
 import OurServices from "../../Components/Home/OurServices/OurServices";
 import MissionStatement from "../../Components/Home/MissionStatement/MissionStatement";
 import UpcomingEvents from "../../Components/Home/UpcomingEvents/UpcomingEvents";
 import Loader from "../../Components/Loader/Loader";
-
+import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import Footer from "../../Components/Footer";
+import Packages from "../../Components/Home/Packages/Packages";
+import Instructors from "../../Components/Home/Instructors/Instructors";
+import Gallery from "../../Components/Home/Gallery/Gallery";
+import Sponsors from "../../Components/Home/Sponsers/Sponsers";
 
 const Home = () => {
   const navigate = useNavigate();
   const images = [
-    home_background1,home_background2,home_background3
+    home_background1
     
   ];
   const [index, setIndex] = useState(0);
@@ -28,28 +30,28 @@ const Home = () => {
   return (
     <>
 
-    <div className="section-full-w-row">
-      <div className="section-boxed-w-row ">
-         <div className="home-container">
-          <div className="home-banner" style={{ backgroundImage: `url(${images[index]})` }}>
-            <div className="home-left-banner">
-              <h1>
-                Unlock Your True Potential with <span>Judgment-Free</span> Sports
-              </h1>
-              <p>
-                From beginners to advanced players, we foster growth in a
-                supportive, judgment-free environment.
-              </p>
-              <button onClick={() => navigate('/buy-packages')} >View All Packages</button>
+    <div className="banner-section"  style={{ backgroundImage: `url(${images[index]})` }}>
+      <div className="section-full-w-row">
+         <div className="section-boxed-w-row">
+          <div className="home-container">
+            <div className="banner-content">
+              <h2>STATEN ISLAND’S PREMIER</h2>
+              <h1>BASKETBALL</h1>
+              <span className="banner-intro">Instruction</span>
+              <div className="custom-btn">
+                <Link to="/">Book Your Session Now</Link>
+              </div>
             </div>
           </div>
-          <OurServices />
-          <MissionStatement />
-          <UpcomingEvents />
         </div>
       </div>
     </div>
-
+          <MissionStatement />
+          <Packages />
+          <UpcomingEvents />
+          <Instructors />
+          <Gallery />
+          <Sponsors />
      
     </>
   );

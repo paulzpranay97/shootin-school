@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
-import HmImg from "../../../Assets/Images/mission-statement.png";
+import videoFile from "../../../Assets/Images/home/home-video.mp4";
+import PlayIcon from "../../../Assets/Images/home/play-icon.png";
 import { BsFillPlayCircleFill, BsFillPauseCircleFill  } from "react-icons/bs";
 import "./missionstatement.css"
 
@@ -27,29 +28,25 @@ const MissionStatement = () => {
       <div className="home-mission-card">
         <div className="home-mission-left">
           <div className="home-mission-content">
-            <h1>Mission Statement</h1>
-            <p>
-              Because We Can is dedicated to providing all players with a
-              supportive and judgment-free environment where they can learn and
-              master the fundamentals of sports. Our mission is to foster a
-              positive and inclusive atmosphere that encourages growth,
-              teamwork, and a lifelong passion for athletics.
-            </p>
-          </div>
-          <div className="hm-img">
-            <img src={HmImg} alt="background" />
+            <h2>Mission</h2>
+            <div className="title">“Don’t just read about it — see how we take players to the next level.”</div>
           </div>
         </div>
         <div className="home-mission-right">
           <div className="video-container">
-            <video ref={videoRef} src="https://videos.pexels.com/video-files/30822229/13182339_640_360_25fps.mp4" className="w-full"  onEnded={handleVideoEnd}/>
+            <video
+              ref={videoRef}
+              src={videoFile}
+              className="w-full"
+              controls
+              onEnded={handleVideoEnd}
+            />
             <div className="video-controls">
-            <button
-              onClick={togglePlay}
-              className="video-play-btn"
-            >
-              {isPlaying ? <BsFillPauseCircleFill size={40} /> : <BsFillPlayCircleFill size={40} />}
-            </button>
+              {!isPlaying && (
+                <button onClick={togglePlay} className="video-play-btn">
+                  <img src={PlayIcon} alt="play" width={80} />
+                </button>
+              )}
             </div>
            
           </div>
