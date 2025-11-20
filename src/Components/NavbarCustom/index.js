@@ -8,8 +8,10 @@ import HamburgerIcon from "../../Assets/Icons/HamburgerIcon";
 import { useLogin } from "../../APIContext/LoginContext";
 import { Menubar } from "primereact/menubar";
 import { Sidebar } from "primereact/sidebar";
+import { useNavigation } from "react-router-dom";
 
 const NavbarCustom = () => {
+  const navigate = useNavigation();
   const { user } = useLogin();
   const [sidebarVisible, setSidebarVisible] = useState(false);
 
@@ -70,7 +72,7 @@ const NavbarCustom = () => {
         // Use a functional template for the Logout button
         template: () => (
             <button 
-                
+                onClick={() => navigate("/login")}
                 className="p-link" 
                 style={{ color: '#F68E1B', fontWeight: 'bold' }}
             >
