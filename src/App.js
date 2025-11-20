@@ -2,6 +2,7 @@ import Routing from "./Routes/Routing";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "primereact/resources/themes/lara-light-cyan/theme.css";
 import { ParentProvider } from "./APIContext/ParentContext";
+import { PlayerAccountProvider } from "./APIContext/PlayerAccountContext";
 
 import "./App.css";
 import { useLogin } from "./APIContext/LoginContext";
@@ -16,9 +17,9 @@ function AppWrapper() {
 
   return (
     <ParentProvider user={user}>
-      
+      <PlayerAccountProvider>
         <Routing />
-                      
+      </PlayerAccountProvider>
      </ParentProvider>
   );
 }

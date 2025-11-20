@@ -2,6 +2,7 @@ import React, { createContext, useContext, useState, useRef, useCallback } from 
 import axiosInstance from "../Config/axios";
 import { Toast } from "primereact/toast";
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const PlayerAccountContext = createContext();
 export const usePlayerAccount = () => useContext(PlayerAccountContext);
@@ -40,6 +41,32 @@ export const PlayerAccountProvider = ({ children }) => {
         headers: { Authorization: `Bearer ${accessToken}` },
       });
       setPlayers(response.data || []);
+    } catch (err) {
+      const errorDetail = err.response?.data?.detail || "Failed to fetch players";
+      setError(errorDetail);
+      toastRef.current?.show({
+        severity: "error",
+        summary: "Error",
+        detail: errorDetail,
+        life: 3000,
+      });
+    } finally {
+      setLoading(false);
+    }
+  }, [navigate]);
+
+  const fetchPlayersPackages = useCallback(async (id) => {
+    const accessToken = localStorage.getItem("accessToken");
+    if (!accessToken) return handleUnauthorized();
+
+    setLoading(true);
+    setError(null);
+
+    try {
+      const response = await axiosInstance.get(`/customer/my-packages/?player_id=${id}`, {
+        headers: { Authorization: `Bearer ${accessToken}` },
+      });
+      return response.data || [];
     } catch (err) {
       const errorDetail = err.response?.data?.detail || "Failed to fetch players";
       setError(errorDetail);
@@ -99,21 +126,19 @@ export const PlayerAccountProvider = ({ children }) => {
     try {
       const response = await axiosInstance.post("/customer/player-account/", playerData, { headers });
       await fetchPlayers();
-      toastRef.current?.show({
-        severity: "success",
-        summary: "Success",
-        detail: "Player created successfully",
-        life: 3000,
+      Swal.fire({
+        icon: "success",
+        title: "Success !",
+        text: `${response.data?.message}`,
       });
+      
       return { success: true, data: response.data };
     } catch (err) {
       const errorDetail = err.response?.data || { detail: "Failed to create player" };
-      setError(errorDetail.detail);
-      toastRef.current?.show({
-        severity: "error",
-        summary: "Error",
-        detail: errorDetail.detail,
-        life: 4000,
+       Swal.fire({
+        icon: "error",
+        title: "Player Creation Failed",
+        text: `${errorDetail.detail || "An error occurred while creating the player."}`,
       });
       return { success: false, error: errorDetail };
     } finally {
@@ -141,21 +166,19 @@ export const PlayerAccountProvider = ({ children }) => {
         { headers }
       );
       await fetchPlayers();
-      toastRef.current?.show({
-        severity: "success",
-        summary: "Success",
-        detail: "Player updated successfully",
-        life: 3000,
+      Swal.fire({
+        icon: "success",
+        title: "Success !",
+        text: `${response.data?.message}`,
       });
       return { success: true, data: response.data };
     } catch (err) {
       const errorDetail = err.response?.data || { detail: "Failed to update player" };
       setError(errorDetail.detail);
-      toastRef.current?.show({
-        severity: "error",
-        summary: "Error",
-        detail: errorDetail.detail,
-        life: 4000,
+      Swal.fire({
+        icon: "error",
+        title: "Player Update Failed",
+        text: `${errorDetail.detail || "An error occurred while updating the player."}`,
       });
       return { success: false, error: errorDetail };
     } finally {
@@ -179,22 +202,19 @@ export const PlayerAccountProvider = ({ children }) => {
         `/customer/player-account/?id=${playerId}`,
         { headers }
       );
-      // await fetchPlayers();
-      toastRef.current?.show({
-        severity: "success",
-        summary: "Success",
-        detail: "Player deleted successfully",
-        life: 3000,
+      await fetchPlayers();
+      Swal.fire({
+        icon: "success",
+        title: "Success !",
+        text: `${response.data?.message || "Player deleted successfully."}`,
       });
       return { success: true, data: response.data };
     } catch (err) {
       const errorDetail = err.response?.data || { detail: "Failed to delete player" };
-      setError(errorDetail.detail);
-      toastRef.current?.show({
-        severity: "error",
-        summary: "Error",
-        detail: errorDetail.detail,
-        life: 4000,
+      Swal.fire({
+        icon: "error",
+        title: "Error !",
+        text: `${errorDetail.detail || "An error occurred while deleting the player."}`,
       });
       return { success: false, error: errorDetail };
     } finally {
@@ -212,7 +232,8 @@ export const PlayerAccountProvider = ({ children }) => {
         fetchParentPlayers,
         createPlayer,
         editPlayer,
-        deletePlayer
+        deletePlayer,
+        fetchPlayersPackages
       }}
     >
       <Toast ref={toastRef} />
@@ -220,3 +241,5 @@ export const PlayerAccountProvider = ({ children }) => {
     </PlayerAccountContext.Provider>
   );
 };
+
+
