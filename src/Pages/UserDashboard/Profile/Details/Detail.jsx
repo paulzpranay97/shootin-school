@@ -1,68 +1,67 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, NavLink, Outlet } from "react-router-dom";
 import StaticPageHeaders from "../../../../Components/StaticPageHeaders";
 import "./index.css";
-import ProfileDetail from "./Sub-Section/ProfileDetail";
-import Player from "./Sub-Section/Player";
-import Payment from "./Sub-Section/Payment";
-import Package from "./Sub-Section/Package";
-import Password from "./Sub-Section/Password";
 
 const Detail = () => {
   const navigate = useNavigate();
-  const [activeTab, setActiveTab] = useState("personal");
 
   return (
     <>
       <StaticPageHeaders title="Your Profile" />
 
       <div className="profile-section-container">
+        
         {/* Sidebar */}
-        <div className="profile-sidebar" id="profile-sidebar">
-          <button
-            className={`profile-sidebar-btn ${
-              activeTab === "personal" ? "active" : ""
-            }`}
-            onClick={() => setActiveTab("personal")}
+        <div className="profile-sidebar">
+
+          <NavLink
+            to="/profile"
+            end
+            className={({ isActive }) =>
+              `profile-sidebar-btn ${isActive ? "active" : ""}`
+            }
           >
             Personal Details
-          </button>
-          <button
-            className={`profile-sidebar-btn ${
-              activeTab === "players" ? "active" : ""
-            }`}
-            onClick={() => setActiveTab("players")}
+          </NavLink>
+
+          <NavLink
+            to="/profile/players"
+            className={({ isActive }) =>
+              `profile-sidebar-btn ${isActive ? "active" : ""}`
+            }
           >
             My Players
-          </button>
-          <button
-            className={`profile-sidebar-btn ${
-              activeTab === "billing" ? "active" : ""
-            }`}
-            onClick={() => setActiveTab("billing")}
+          </NavLink>
+
+          <NavLink
+            to="/profile/billing"
+            className={({ isActive }) =>
+              `profile-sidebar-btn ${isActive ? "active" : ""}`
+            }
           >
             Payments & Billings
-          </button>
-          <button
-            className={`profile-sidebar-btn ${
-              activeTab === "packages" ? "active" : ""
-            }`}
-            onClick={() => setActiveTab("packages")}
+          </NavLink>
+
+          <NavLink
+            to="/profile/packages"
+            className={({ isActive }) =>
+              `profile-sidebar-btn ${isActive ? "active" : ""}`
+            }
           >
             My Packages
-          </button>
-          <button
-            className={`profile-sidebar-btn ${
-              activeTab === "password" ? "active" : ""
-            }`}
-            onClick={() => setActiveTab("password")}
+          </NavLink>
+
+          <NavLink
+            to="/profile/password"
+            className={({ isActive }) =>
+              `profile-sidebar-btn ${isActive ? "active" : ""}`
+            }
           >
             Change Password
-          </button>
+          </NavLink>
+
           <button
-            className={`profile-sidebar-btn ${
-              activeTab === "logout" ? "active" : ""
-            }`}
+            className="profile-sidebar-btn"
             onClick={() => navigate("/logout")}
           >
             Log Out
@@ -70,34 +69,10 @@ const Detail = () => {
         </div>
 
         {/* Content Area */}
-        <div className="profile-content-area" id="profile-content-area">
-          {activeTab === "personal" && (
-            <div id="profile-tab-personal">
-              <ProfileDetail />
-            </div>
-          )}
-          {activeTab === "players" && (
-            <div id="profile-tab-players">
-              <Player />
-            </div>
-          )}
-          {activeTab === "billing" && (
-            <div id="profile-tab-billing">
-            <Payment />
-            </div>
-          )}
-          {activeTab === "packages" && (
-            <div id="profile-tab-packages">
-             <Package />
-            </div>
-          )}
-          {activeTab === "password" && (
-            <div id="profile-tab-password">
-            <Password />
-            </div>
-          )}
+        <div className="profile-content-area">
+          <Outlet />
         </div>
-         
+
       </div>
     </>
   );

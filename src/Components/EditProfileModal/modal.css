@@ -1,0 +1,177 @@
+/* Background Overlay */
+
+.readonly-input {
+    background: #e1e1e1f5 !important;
+    pointer-events: none !important;
+    color: #5555555c !important;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(2px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  animation: fadeIn 0.2s ease-in-out;
+  padding: 12px;
+}
+
+/* Modal Box */
+.modal-box {
+  width: 480px;
+  max-width: 100%;
+  max-height: 90vh;      /* IMPORTANT: prevent overflow */
+  background: #fff;
+  border-radius: 14px;
+  padding: 0;            /* move padding into children */
+  box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.12);
+  animation: slideUp 0.35s ease;
+  font-family: "Inter", "Roboto", "Segoe UI", sans-serif;
+
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;      /* clip child scroll */
+}
+
+/* Header */
+.modal-header {
+  height: 40px;
+  padding: 28px;
+  border-bottom: 1px solid #eee;
+  padding: 30px !important;
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+  color: #303030;
+}
+
+/* Scrollable body */
+.modal-content {
+  padding: 28px;
+  overflow-y: auto;      /* scroll here */
+}
+
+/* Form Row */
+.modal-row {
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Label */
+.modal-row label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #5c5c5c;
+  margin-bottom: 6px;
+}
+
+/* Input Field */
+.modal-row input {
+  padding: 10px 14px !important;
+  border-radius: 10px;
+  border: 1.5px solid #e3e3e3;
+  background: #fafafa;
+  font-size: 15px;
+  transition: all 0.25s ease;
+}
+
+.modal-row input:focus {
+  outline: none;
+  border-color: #d6892c;
+  background: #fff;
+  box-shadow: 0px 0px 0px 3px rgba(214, 137, 44, 0.15);
+}
+
+/* Footer */
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 14px;
+  padding: 20px 28px;
+  border-top: 1px solid #eee;
+}
+
+/* Cancel Button */
+.cancel-btn {
+  background: #f0f0f0;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.25s ease;
+}
+
+.cancel-btn:hover {
+  background: #e0e0e0;
+}
+
+/* Save Button */
+.save-btn {
+  background: #d6892c;
+  color: #fff;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.25s ease;
+}
+
+.save-btn:hover {
+  background: #c37a24;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(25px); opacity: 0; }
+  to { transform: translateY(0px); opacity: 1; }
+}
+
+/* ----------------------- */
+/* 📱 Mobile Responsive */
+/* ----------------------- */
+@media (max-width: 600px) {
+
+  .modal-box {
+    width: 100%;
+    max-height: 90vh;
+    border-radius: 12px;
+  }
+
+  .modal-header h3 {
+    font-size: 18px;
+  }
+
+  .modal-actions {
+    flex-direction: column;
+  }
+
+  .cancel-btn,
+  .save-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 15px;
+  }
+}
+
+/* Tablets */
+@media (max-width: 900px) and (min-width: 600px) {
+  .modal-box {
+    width: 70%;
+  }
+}
