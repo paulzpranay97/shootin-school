@@ -8,10 +8,10 @@ import HamburgerIcon from "../../Assets/Icons/HamburgerIcon";
 import { useLogin } from "../../APIContext/LoginContext";
 import { Menubar } from "primereact/menubar";
 import { Sidebar } from "primereact/sidebar";
-import { useNavigation } from "react-router-dom";
+import { useNavigate  } from "react-router-dom";
 
 const NavbarCustom = () => {
-  const navigate = useNavigation();
+  const navigate = useNavigate();
   const { user } = useLogin();
   const [sidebarVisible, setSidebarVisible] = useState(false);
 
