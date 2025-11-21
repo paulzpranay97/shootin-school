@@ -15,6 +15,8 @@ const NavbarCustom = () => {
   const { user } = useLogin();
   const [sidebarVisible, setSidebarVisible] = useState(false);
 
+  const external_link = "https://fixmyjumpshot.shootinschool.com/";
+
   
 
   // Menu items when NOT logged in
@@ -38,7 +40,12 @@ const NavbarCustom = () => {
       ],
     },
     { label: "Weekly Schedule", template: () => <Link to="/weekly-schedule" onClick={() => setSidebarVisible(false)}>Weekly Schedule</Link> },
-    { label: "Online Shooting Course", template: () => <Link to="/online-shooting-course" onClick={() => setSidebarVisible(false)}>Online Shooting Course</Link> },
+    {
+      label: "Online Shooting Course",
+      command: () => {
+        window.open(external_link, "_blank");
+      }
+    },
     { label: "Contact", template: () => <Link to="/contact" onClick={() => setSidebarVisible(false)}>Contact</Link> },
     { label: "How to Schedule", template: () => <Link to="/how-to-schedule" onClick={() => setSidebarVisible(false)}>How to Schedule</Link> },
   ];
@@ -64,7 +71,12 @@ const NavbarCustom = () => {
       ],
     },
     { label: "Weekly Schedule", template: () => <Link to="/weekly-schedule" onClick={() => setSidebarVisible(false)}>Weekly Schedule</Link> },
-    { label: "Online Shooting Course", template: () => <Link to="/online-shooting-course" onClick={() => setSidebarVisible(false)}>Online Shooting Course</Link> },
+    {
+      label: "Online Shooting Course",
+      command: () => {
+        window.open(external_link, "_blank");
+      }
+    },
     { label: "Contact", template: () => <Link to="/contact" onClick={() => setSidebarVisible(false)}>Contact</Link> },
     { label: "How to Schedule", template: () => <Link to="/how-to-schedule" onClick={() => setSidebarVisible(false)}>How to Schedule</Link> },
     { 
@@ -104,7 +116,12 @@ const NavbarCustom = () => {
       ],
     },
     { label: "Weekly Schedule", template: () => <Link to="/weekly-schedule" onClick={() => setSidebarVisible(false)}>Weekly Schedule</Link> },
-    { label: "Online Shooting Course", template: () => <Link to="/online-shooting-course" onClick={() => setSidebarVisible(false)}>Online Shooting Course</Link> },
+    {
+      label: "Online Shooting Course",
+      command: () => {
+        window.open(external_link, "_blank");
+      }
+    },
     { label: "Contact", template: () => <Link to="/contact" onClick={() => setSidebarVisible(false)}>Contact</Link> },
     { label: "How to Schedule", template: () => <Link to="/how-to-schedule" onClick={() => setSidebarVisible(false)}>How to Schedule</Link> },
   ];
@@ -130,7 +147,12 @@ const NavbarCustom = () => {
       ],
     },
     { label: "Weekly Schedule", template: () => <Link to="/weekly-schedule" onClick={() => setSidebarVisible(false)}>Weekly Schedule</Link> },
-    { label: "Online Shooting Course", template: () => <Link to="/online-shooting-course" onClick={() => setSidebarVisible(false)}>Online Shooting Course</Link> },
+    {
+      label: "Online Shooting Course",
+      command: () => {
+        window.open(external_link, "_blank");
+      }
+    },
     { label: "Contact", template: () => <Link to="/contact" onClick={() => setSidebarVisible(false)}>Contact</Link> },
     { label: "How to Schedule", template: () => <Link to="/how-to-schedule" onClick={() => setSidebarVisible(false)}>How to Schedule</Link> },
     { 

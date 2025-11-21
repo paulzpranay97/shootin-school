@@ -61,3 +61,7 @@ input {
   padding: 10px;
 }
 
+.p-menuitem-content {
+    background-color: transparent !important;
+}
+
