@@ -222,7 +222,9 @@ const NavbarCustom = () => {
        </div>
   ) : (
     <div className="navbar-icons">
+      <Link to="/cart" className="nav-icon" onClick={() => setSidebarVisible(false)}>
       <CartIcon className="nav-icon" />
+      </Link>
       <Link to="/profile" className="nav-icon" onClick={() => setSidebarVisible(false)}>
         <UserIcon className="nav-icon" />
       </Link>
@@ -244,7 +246,9 @@ const NavbarCustom = () => {
        </div>
   ) : (
     <div className="navbar-icons">
+      <Link to="/cart" className="nav-icon" onClick={() => setSidebarVisible(false)}>
       <CartIcon className="nav-icon" />
+      </Link>
       <Link to="/profile" className="nav-icon" onClick={() => setSidebarVisible(false)}>
         <UserIcon className="nav-icon" />
       </Link>

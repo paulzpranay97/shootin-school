@@ -20,6 +20,11 @@ import Register from "../Pages/Authentication/register/Register";
 import Forget from "../Pages/Authentication/Forget/Forget";
 import OtpVerify from "../Pages/Authentication/OtpVerify/OtpVerify";
 import ResetPassword from "../Pages/Authentication/ResetPassword/ResetPassword";
+import { InstructionsContextProvider } from "../APIContext/InstructionsContext";
+import InstructionsForm from "../Pages/InstructionsForm";
+import { PlayerAccountProvider } from "../APIContext/PlayerAccountContext";
+import Cart from "../Pages/Cart/Cart";
+import Checkout from "../Pages/Cart/Checkout";
 
 const Routing = () => {
   return (
@@ -39,6 +44,10 @@ const Routing = () => {
         <Route path="/group-instruction" element={<GroupInstruction />} />
         <Route path="/individual-instruction" element={<IndividualInstruction />} />
         <Route path="/unlimited-instruction" element={<UnlimitedInstruction />} />
+
+        <Route path="/packages/:packageId" element={<InstructionsForm /> } />
+        <Route path="/cart" element={<Cart /> } />
+        <Route path="/checkout" element={<Checkout /> } />
 
         {/* PROFILE SECTION (Nested) */}
         <Route path="/profile" element={<Detail />}>

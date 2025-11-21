@@ -3,14 +3,14 @@
   background: url(../../../Assets/Images/home/packages-bg.webp);
   padding: 60px 0;
   text-align: center;
-  background-position:0px -228px;
-    background-repeat: no-repeat;
-   background-size: cover;
+  background-position: 0px -228px;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .container {
-    max-width: 1440px;
-    margin: auto;
-    padding: 0 30px;
+  max-width: 1440px;
+  margin: auto;
+  padding: 0 30px;
 }
 .packages-title {
   color: #fff;
@@ -28,36 +28,45 @@
 }
 
 .package-card {
-background: #FFF6EC;
-    padding: 25px 25px 0;
-    min-height: 500px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    border-radius: 16px;
-    position: relative;
+  background: #fff6ec;
+  padding: 25px 25px 0;
+  min-height: 500px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+  position: relative;
 }
 .package-img {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    left: 0;
-}
-.package-card h3 {
-    font-size: 24px;
-    font-weight: 700;
-    margin-bottom: 0;
-    color: #7E4200;
-    font-family: "Antonio", sans-serif;
-}
-.package-card p {
-    font-size: 12px;
-    color: #313131;
-    margin: 20px 0;
-    line-height: 1.4;
-    min-height: 115px;
+  /* position: absolute;
+    bottom: 0; */
+  width: 100%; 
+  height: 200px;
+  overflow: hidden;
+  /* left: 0; */
 }
 
+.package-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  opacity: 0.5;
+}
+.package-card h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 0;
+  color: #7e4200;
+  font-family: "Antonio", sans-serif;
+}
+.package-card p {
+  font-size: 12px;
+  color: #313131;
+  margin: 20px 0;
+  line-height: 1.4;
+  min-height: 115px;
+}
 
 .package-card button {
   background: #ff9a2a;
@@ -88,32 +97,31 @@ background: #FFF6EC;
   border-radius: 25px;
   filter: grayscale(100%);
 }
-@media (max-width:1024px){
-   
-    .package-card{
-        min-height: 580px;
-    }
-    .packages-grid{
-      padding: 0;
-    }
-    .package-card h3{
-      font-size: 20px;
-    }
+@media (max-width: 1024px) {
+  .package-card {
+    min-height: 580px;
+  }
+  .packages-grid {
+    padding: 0;
+  }
+  .package-card h3 {
+    font-size: 20px;
+  }
 }
 
 @media (max-width: 900px) {
-        .packages-grid {
-        padding: 0;
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .package-card {
-        min-height: 460px;
-    }
+  .packages-grid {
+    padding: 0;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .package-card {
+    min-height: 460px;
+  }
 }
 
 @media (max-width: 767px) {
-    .packages-grid {
-        padding: 0;
-        grid-template-columns: repeat(1, 1fr);
-    }
+  .packages-grid {
+    padding: 0;
+    grid-template-columns: repeat(1, 1fr);
+  }
 }

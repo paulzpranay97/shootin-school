@@ -12,6 +12,7 @@ import Packages from "../../Components/Home/Packages/Packages";
 import Instructors from "../../Components/Home/Instructors/Instructors";
 import Gallery from "../../Components/Home/Gallery/Gallery";
 import Sponsors from "../../Components/Home/Sponsers/Sponsers";
+import { InstructionsContextProvider } from "../../APIContext/InstructionsContext";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -47,7 +48,9 @@ const Home = () => {
       </div>
     </div>
           <MissionStatement />
-          <Packages />
+          <InstructionsContextProvider>
+            <Packages />
+          </InstructionsContextProvider>
           <UpcomingEvents />
           <Instructors />
           <Gallery />
