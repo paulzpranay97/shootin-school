@@ -21,6 +21,8 @@ import Forget from "../Pages/Authentication/Forget/Forget";
 import OtpVerify from "../Pages/Authentication/OtpVerify/OtpVerify";
 import ResetPassword from "../Pages/Authentication/ResetPassword/ResetPassword";
 
+import SessionScheduled from "../Pages/Schedule/SessionScheduled"; 
+
 const Routing = () => {
   return (
     <Routes>
@@ -39,6 +41,11 @@ const Routing = () => {
         <Route path="/group-instruction" element={<GroupInstruction />} />
         <Route path="/individual-instruction" element={<IndividualInstruction />} />
         <Route path="/unlimited-instruction" element={<UnlimitedInstruction />} />
+        <Route path="/session-scheduled" element={<SessionScheduled />} />
+
+
+
+        
 
         {/* PROFILE SECTION (Nested) */}
         <Route path="/profile" element={<Detail />}>

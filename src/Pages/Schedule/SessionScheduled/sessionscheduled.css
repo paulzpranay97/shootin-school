@@ -1,0 +1,224 @@
+.session-scheduled-page {
+  max-width: 930px;
+  margin: 90px auto;
+}
+
+.session-scheduled-page .scp-title {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.session-scheduled-page .scp-title h2 {
+  font-family: Antonio;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 100%;
+  text-transform: uppercase;
+  color: #f58e1e;
+  text-shadow: none;
+  margin-bottom: 10px;
+}
+
+.session-scheduled-page .scp-title p {
+  font-family: Antonio;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 100%;
+  text-transform: uppercase;
+  color: #c7822d;
+}
+
+.scp-gi-cnt {
+  padding: 30px 106px;
+  border-radius: 30px;
+  background-image: url("../../../Assets/Images/GIBg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  margin-bottom: 26px;
+}
+
+.scp-gi-cnt h3 {
+  font-family: Antonio;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 100%;
+  text-transform: uppercase;
+  color: #c7822d;
+  text-align: center;
+}
+
+.scp-gi-cnt .scp-gi-dtls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px 75px;
+  margin-top: 30px;
+  padding: 0px 50px;
+}
+
+.scp-gi-cnt .scp-gi-dtls .gi-dtl-items {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.scp-gi-cnt .scp-gi-dtls .gi-dtl-items span {
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 100%;
+  color: #4d4d4d;
+}
+
+.scp-gi-cnt .scp-gi-dtls .gi-dtl-items p {
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 120%;
+  color: #000000;
+}
+
+.scp-gi-cnt .scp-gi-ftr {
+  text-align: center;
+}
+
+.scp-gi-cnt .scp-gi-ftr p {
+  font-family: Inter;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 130%;
+  color: #000;
+}
+
+.scp-gi .scp-gi-btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 57px;
+}
+
+.scp-gi .scp-gi-btns a.btn {
+  width: 100%;
+  padding: 18px;
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 100%;
+  border-radius: 16px;
+}
+
+.scp-gi .scp-gi-btns a.bg-orange.btn {
+  background: #f58e1e;
+  color: #fff;
+}
+
+.scp-gi .scp-gi-btns a.bg-transparent.btn {
+  border: 2px solid #f58e1e;
+  color: #f58e1e;
+}
+
+.session-scheduled-page .gi-team-quote {
+  display: flex;
+  gap: 25px;
+}
+
+.session-scheduled-page .gi-team-quote .gi-tq-cnt {
+  padding: 30px;
+  background: #f8f8f8;
+  border: 1px solid #e7e7e7;
+  border-radius: 25px;
+}
+
+.session-scheduled-page .gi-team-quote .gi-tq-cnt p {
+  font-family: Inter;
+  font-weight: 500;
+  font-style: Italic;
+  font-size: 18px;
+  line-height: 125%;
+  text-transform: capitalize;
+  margin-bottom: 20px;
+  color: #000000;
+}
+
+.session-scheduled-page .gi-team-quote .gi-tq-cnt span {
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 100%;
+  color: #f58e1e;
+}
+
+.session-scheduled-page .gi-team-quote .gi-tq-img img {
+  width: 117px;
+}
+
+.session-scheduled-page .gi-team-quote .gi-tq-img {
+  display: flex;
+  align-items: flex-end;
+}
+
+@media (max-width: 991px) {
+  .session-scheduled-page {
+    margin: 50px 20px;
+  }
+
+  .session-scheduled-page .scp-title h2 {
+    font-size: 28px;
+  }
+
+  .scp-gi-cnt {
+    padding: 20px;
+  }
+
+  .scp-gi-cnt .scp-gi-dtls {
+    padding: 0px;
+    gap: 25px;
+  }
+
+  .scp-gi .scp-gi-btns {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 600px) {
+  .session-scheduled-page .scp-title h2 {
+    font-size: 24px;
+    line-height: 34px;
+  }
+
+  .scp-gi-cnt .scp-gi-dtls {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .scp-gi-cnt .scp-gi-ftr p {
+    font-size: 12px;
+    line-height: 22px;
+  }
+
+  .session-scheduled-page .gi-team-quote .gi-tq-cnt p {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .session-scheduled-page .gi-team-quote .gi-tq-cnt span {
+    font-size: 14px;
+  }
+
+  .scp-gi-cnt .scp-gi-dtls .gi-dtl-items p {
+    font-size: 16px;
+    line-height: 20px;
+}
+}
+
+@media (max-width: 450px) {
+  .session-scheduled-page .gi-team-quote {
+    flex-direction: column-reverse;
+  }
+
+  .session-scheduled-page .scp-title p {
+    font-size: 14px;
+    line-height: 24px;
+}
+}

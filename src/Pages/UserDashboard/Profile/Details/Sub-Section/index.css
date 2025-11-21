@@ -524,7 +524,7 @@
 .password-form {
   display: flex;
   flex-direction: column;
-  gap: 0px;
+  gap: 10px;
   width: 100%;
   max-width: 350px;
 }
@@ -568,7 +568,26 @@
   font-size: 15px;
   font-weight: 600;
   cursor: pointer;
+  margin-top: 10px;
 }
+
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper input {
+  width: 100%;
+  padding-right: 40px; /* space for icon */
+}
+
+.toggle-icon {
+  position: absolute;
+  right: 12px;
+  top: 38px;
+  cursor: pointer;
+  color: #555;
+}
+
 
 @media (min-width: 768px) {
   .password-form {

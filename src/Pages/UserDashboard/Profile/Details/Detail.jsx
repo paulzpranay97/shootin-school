@@ -2,8 +2,31 @@ import { useNavigate, NavLink, Outlet } from "react-router-dom";
 import StaticPageHeaders from "../../../../Components/StaticPageHeaders";
 import "./index.css";
 
+import {useLogout} from "../../../../APIContext/UseLogout";
+import Swal from "sweetalert2";
+
+
+
 const Detail = () => {
   const navigate = useNavigate();
+
+  const handleLogout = useLogout();
+
+    const handleLogoutConfirm = () => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You will be logged out from your account.",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: "Yes, Logout",
+      cancelButtonText: "Cancel",
+      confirmButtonColor: "#f68e1b"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        handleLogout();
+      }
+    });
+  };
 
   return (
     <>
@@ -62,7 +85,7 @@ const Detail = () => {
 
           <button
             className="profile-sidebar-btn"
-            onClick={() => navigate("/logout")}
+            onClick={handleLogoutConfirm}
           >
             Log Out
           </button>

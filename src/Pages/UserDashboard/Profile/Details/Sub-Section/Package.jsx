@@ -1,47 +1,34 @@
+import { useEffect, useState } from "react";
+import "./index.css";
+import { useParent } from "../../../../../APIContext/ParentContext";
+import Swal from "sweetalert2";
+
 const Package = () => {
+
+  const { fetchParentPackages } = useParent();
+  const [packageData, setPackageData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await fetchParentPackages();
+      if (result.success) {
+        setPackageData(result.data);
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: "Failed to fetch packages.",
+        });
+      }
+    };
+
+    fetchData();
+  }, [fetchParentPackages]);
+
+
   
-  const packageData = [
-  {
-    orderId: "ORD-1001",
-    packageName: "Gold Tier",
-    credits: 20,
-    nextBill: "2025-03-11",
-    status: "Active",
-    subscription: "Monthly"
-  },
-  {
-    orderId: "ORD-1002",
-    packageName: "Silver Tier",
-    credits: 10,
-    nextBill: "2025-04-02",
-    status: "Expired",
-    subscription: "Monthly"
-  },
-  {
-    orderId: "ORD-1003",
-    packageName: "Platinum Tier",
-    credits: 50,
-    nextBill: "2025-02-28",
-    status: "Active",
-    subscription: "Yearly"
-  },
-  {
-    orderId: "ORD-1004",
-    packageName: "Starter Pack",
-    credits: 5,
-    nextBill: "2025-03-15",
-    status: "Cancelled",
-    subscription: "Monthly"
-  },
-  {
-    orderId: "ORD-1005",
-    packageName: "Diamond Elite",
-    credits: 75,
-    nextBill: "2025-05-01",
-    status: "Active",
-    subscription: "Yearly"
-  }
-];
+
+  
 
   return (
     <div className="profile-detail-container">

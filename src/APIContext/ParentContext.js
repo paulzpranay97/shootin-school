@@ -169,7 +169,7 @@ export const ParentProvider = ({ children, user }) => {
       Swal.fire({
         icon: "success",
         title: "Updated",
-        text: "Profile updated successfully.",
+        text: response.data?.message || "Profile updated successfully.",
       });
 
       return { success: true, data: response.data };
@@ -188,33 +188,33 @@ export const ParentProvider = ({ children, user }) => {
   const forgotPassword = async (data) => {
     localStorage.clear();
 
-  try {
-    setLoading(true);
+    try {
+      setLoading(true);
 
-    const response = await axiosInstance.post(
-      "/customer/forgot-password/send-otp/",
-      data
-    );
+      const response = await axiosInstance.post(
+        "/customer/forgot-password/send-otp/",
+        data
+      );
 
-    Swal.fire({
-      icon: "success",
-      title: "OTP Sent",
-      text: "A password reset OTP has been sent to your email.",
-    });
+      Swal.fire({
+        icon: "success",
+        title: "OTP Sent",
+        text: "A password reset OTP has been sent to your email.",
+      });
 
-    return { success: true, data: response.data };
-  } catch (err) {
-    Swal.fire({
-      icon: "error",
-      title: "Failed",
-      text: err.response?.data?.detail || "Failed to send OTP.",
-    });
+      return { success: true, data: response.data };
+    } catch (err) {
+      Swal.fire({
+        icon: "error",
+        title: "Failed",
+        text: err.response?.data?.detail || "Failed to send OTP.",
+      });
 
-    return { success: false };
-  } finally {
-    setLoading(false);
-  }
-};
+      return { success: false };
+    } finally {
+      setLoading(false);
+    }
+  };
 
 const VerifyOTP = async (data) => {
   try {
@@ -289,6 +289,27 @@ const resetPassword = async (data) => {
   }
 };
 
+const fetchParentPackages = async () => {
+    const accessToken = localStorage.getItem("accessToken");
+    setLoading(true);
+
+    try {
+      const response = await axiosInstance.get(`/customer/my-packages/`, {
+        headers: { Authorization: `Bearer ${accessToken}` },
+      });
+      return response.data || [];
+    } catch (err) {
+      const errorDetail = err.response?.data?.detail || "Failed to fetch players";
+      Swal.fire({
+        icon: "error",
+        title: "Failed",
+        text: err.response?.data?.detail || "Failed to fetch packages.",
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
+
 
   // useEffect(() => {
   //   const token = localStorage.getItem("accessToken");
@@ -310,7 +331,9 @@ const resetPassword = async (data) => {
         forgotPassword,
         addParent,
         VerifyOTP,
-        resetPassword
+        resetPassword,
+        changePasswordParentProfile,
+        fetchParentPackages
       }}
     >
       {loading && (
