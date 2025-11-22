@@ -1,15 +1,16 @@
 // import TrashIcon from "../../../Assets/Icons/TrashIcon";
-import './cart.css';
+// import './checkout.css';
 
 import CartCom from "../../../Components/CartCom";
 import { InstructionsContextProvider } from "../../../APIContext/InstructionsContext";
+import CheckoutCom from '../../../Components/CheckoutCom';
 
-const Cart = () => {
+const Checkout = () => {
     return (
         <InstructionsContextProvider>
-            <CartCom />
+            <CheckoutCom />
         </InstructionsContextProvider>
     );
 };
 
-export default Cart;
+export default Checkout;
